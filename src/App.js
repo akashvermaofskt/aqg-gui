@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+//components
+import InputForm from "./components/InputForm";
+import Result from "./components/Result";
+
+const App = () => {
+  const [state,setState] = useState({Text:"",Lines:0,Summary:"",QAs:[{Original_Sentence:"This is a sentence.",Question:"This is a Question",Answer:"This is an answer"}]});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="main">
+        <InputForm state={state} setState={setState}/>
+        <Result state={state} setState={setState}/>  
     </div>
   );
 }
