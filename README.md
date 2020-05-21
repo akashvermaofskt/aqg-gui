@@ -1,4 +1,4 @@
-# Frontend of Automatic Qustion Generator using React
+# Frontend of Automatic Question Generator using React
 
 ## How to set up the project environemnt
 
@@ -11,8 +11,11 @@
 
 * Open terminal then `cd aqg-gui` 
 * Run command `npm start` in your terminal
+* Goto http://localhost:3000/? from your browser.
 
-###################################################################################################
+# END
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
