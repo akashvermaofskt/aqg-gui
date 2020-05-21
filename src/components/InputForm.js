@@ -6,6 +6,10 @@ const InputForm = ({state,setState}) => {
     const submitForm = (e) => {
         e.preventDefault();
         console.log(state);
+        if(Number(state.Lines)<2){
+            alert("Please enter number of lines greater than 2.")
+            return;
+        }
         const payload = { 
             Text: state.Text,
             Lines: state.Lines
@@ -20,7 +24,6 @@ const InputForm = ({state,setState}) => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             setState({...state,Summary:  data.Summary});
         });
 
@@ -33,7 +36,7 @@ const InputForm = ({state,setState}) => {
                 <label id="lb1">Input Text:</label>
                 <textarea type="text" onChange={(e)=>setState({...state,Text:e.target.value})}/>
 
-                <label id="lb2">Number of lines to summarize into :</label>
+                <label id="lb2">Number of lines to summarize into (greater than 1):</label>
                 <input type="number" onChange={(e)=>setState({...state,Lines:e.target.value})}/>
                 
             <button>Summarize and generate questions</button>

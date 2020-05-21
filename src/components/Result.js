@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 const Result = ({state,setState}) => {
 
     useEffect(()=>{
-        console.log(state);
         
         if(state.Summary === "")
             return
@@ -21,7 +20,6 @@ const Result = ({state,setState}) => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             if(data.QAs)
                 setState({...state,QAs:  data.QAs});
         });
@@ -29,17 +27,19 @@ const Result = ({state,setState}) => {
 
     },[state.Summary]);
 
-    const displayQuestions = () => {   
-        console.log(state);
+    const displayQuestions = () => { 
         if(state.QAs.length === 0 ){
+            return (<li>
+                Please input some text.
+            </li>);
         }else{
             let i=0;
             return state.QAs.map((data)=>(
             <li key={i++}>
                 <ul style={{listStyle: "none"}}>
-                    <li key={data.Original_Sentence}>Original Sentence: {data.Original_Sentence} </li>
-                    <li key={data.Question}>Question: {data.Question} </li>
-                    <li key={data.Answer}>Answer: {data.Answer} </li>
+                    <li key={data.Original_Sentence}><span className="bold">Original Sentence:</span> {data.Original_Sentence} </li>
+                    <li key={data.Question}><span className="bold">Question:</span> {data.Question} </li>
+                    <li key={data.Answer}><span className="bold">Answer:</span> {data.Answer} </li>
                 </ul>
             </li>
             ));
