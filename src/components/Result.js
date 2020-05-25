@@ -38,18 +38,20 @@ const Result = ({state,setState}) => {
             <li key={i++}>
                 <ul style={{listStyle: "none"}}>
                     <li key={data.Original_Sentence}><span className="bold">Original Sentence:</span> {data.Original_Sentence} </li>
+                    <hr  width="20%"></hr>
                     <li key={data.Question}><span className="bold">Question:</span> {data.Question} </li>
+                    <hr  width="20%"></hr>
                     <li key={data.Answer}><span className="bold">Answer:</span> {data.Answer} </li>
                 </ul>
+                <hr className="border border-light" width="80%"></hr>
             </li>
             ));
         }
     };
 
     return (
-        <div id="result">
-        <h1>Result</h1>
-        <div>
+        <div className="container-fluid p-5 bg-dark" id="result">
+            <h1>Result</h1>
             <div>
                 <h3>Summary</h3>
                 <p>{state.Summary}</p>
@@ -60,7 +62,6 @@ const Result = ({state,setState}) => {
                     {displayQuestions()}
                 </ol>
             </div>
-        </div>
         </div>
     );
 }

@@ -31,7 +31,6 @@ const InputForm = ({state,setState}) => {
 
     return (
         <form id="input" onSubmit={submitForm}>
-            <h1>Automatic Question Answer Generator</h1>
             <div className="field" >
                 <label id="lb1">Input Text:</label>
                 <textarea type="text" onChange={(e)=>setState({...state,Text:e.target.value})}/>
@@ -39,7 +38,7 @@ const InputForm = ({state,setState}) => {
                 <label id="lb2">Number of lines to summarize into (greater than 1):</label>
                 <input type="number" onChange={(e)=>setState({...state,Lines:e.target.value})}/>
                 
-            <button>Summarize and generate questions</button>
+            <button className="btn btn-dark">Summarize and generate questions</button>
             </div>
         </form>
     );
