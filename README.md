@@ -2,19 +2,18 @@
 
 ## How to set up the project environemnt
 
-* [Clone](https://github.com/akashvermaofskt/aqg-gui) this repo in your local machine.
-* [Download & Install](https://nodejs.org/en/download/) Node. 
-* cd ⁨`aqg-gui`
-* run command `npm install`
+- [Clone](https://github.com/akashvermaofskt/aqg-gui) this repo in your local machine.
+- [Download & Install](https://nodejs.org/en/download/) Node.
+- cd ⁨`aqg-gui`
+- run command `npm install`
 
 ## How to run
 
-* Open terminal then `cd aqg-gui` 
-* Run command `npm start` in your terminal
-* Goto http://localhost:3000/? from your browser.
+- Open terminal then `cd aqg-gui`
+- Run command `npm start` in your terminal
+- Goto http://localhost:3000/? from your browser.
 
 # END
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
